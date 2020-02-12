@@ -1,0 +1,1 @@
+﻿var moving = 0;
