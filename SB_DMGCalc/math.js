@@ -22,13 +22,25 @@ function setGuild() {
   );
   Enemy_Guard_Special = document.getElementById("Enemy_Guard_Special").value;
 }
-
+// Batch_のついた Party_Ratio ATK ATK_Soul ATK_UP Sword Elem Elem_Subを一括代入
 function batchInput() {
   let LS = document.getElementById("Batch_Party_Ratio").value;
+  let ATK = document.getElementById("Batch_ATK").value;
+  let ATK_Soul = document.getElementById("Batch_ATK_Soul").value;
+  let ATK_UP = document.getElementById("Batch_ATK_UP").value;
   let Sword = document.getElementById("Batch_Sword").value;
+  let Elem = document.getElementById("Batch_Elem").value;
+  let Elem_Sub = document.getElementById("Batch_Elem_Sub").value;
+  // どうせ各要素の数は等しいのでParty_Ratioの数だけ数えて単一ループで代入しちゃう
+  // もし今後要素ごとに数が異なるなら配列作って要素ごとにループ回します
   for (let i = 0, l = document.getElementsByName("Party_Ratio").length; i < l; i++) {
     document.getElementsByName("Party_Ratio")[i].value = LS;
+    document.getElementsByName("ATK")[i].value = ATK;
+    document.getElementsByName("ATK_Soul")[i].value = ATK_Soul;
+    document.getElementsByName("ATK_UP")[i].value = ATK_UP;
     document.getElementsByName("Sword")[i].value = Sword;
+    document.getElementsByName("Elem")[i].value = Elem;
+    document.getElementsByName("Elem_Sub")[i].value = Elem_Sub;
     // console.log(i + "looped");
   }
 }
